@@ -1,27 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,700;1,900&family=Noto+Sans:wght@400;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Noto Sans', sans-serif;
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --clr-dark: #000000;
+  --clr-light: #f7f7f7; 
+  --clr-gray: #e0e0e0;
+  --clr-error: #FF0000;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --font-family-text: 'Noto Sans', sans-serif;
+  --font-family-title: 'Montserrat', sans-serif;
 }
-
 body {
-   color: rgb(var(--foreground-rgb));
-   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-   )
-   rgb(var(--background-start-rgb));
+   color: var(--clr-dark);
+   background: var(--clr-light);
+   font-family: var(--font-family-text)
 }
+
+.max-width {
+   @apply max-w-[1440px] mx-auto;
+}
+
+.padding-x {
+   @apply sm:px-16 px-6;
+}
+.padding-y {
+   @apply py-4;
+}
+
+.flex-center {
+   @apply flex items-center justify-center;
+}
+.flex-between {
+   @apply flex items-center justify-between;
+}
+
+.custom-btn {
+   @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
+}
+
+.searchbar {
+   @apply flex items-center justify-start;
+ }
